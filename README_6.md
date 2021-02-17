@@ -155,13 +155,13 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 #
-[FullCode](https://github.com/gzeinnumer/MyLibDirectory/blob/master/example/LoadImageFromInternetandSave/MainActivity.java)
+[FullCode](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/example/LoadImageFromInternetandSave/MainActivity.java)
 
 [Sample Code And App](https://github.com/gzeinnumer/MyLibDirectoryExample)
 
 Preview :
 
-|![](https://github.com/gzeinnumer/MyLibDirectory/blob/master/assets/example23.jpg)|![](https://github.com/gzeinnumer/MyLibDirectory/blob/master/assets/example24.jpg)|![](https://github.com/gzeinnumer/MyLibDirectory/blob/master/assets/example25.jpg)|![](https://github.com/gzeinnumer/MyLibDirectory/blob/master/assets/example26.jpg)|
+|![](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/assets/example23.jpg)|![](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/assets/example24.jpg)|![](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/assets/example25.jpg)|![](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/assets/example26.jpg)|
 |--|--|--|--|
 |Request Permision|Success download image|Folder `Foto_Download` created|Folder `file name.jpg` has downloaded and save|
 

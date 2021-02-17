@@ -1,9 +1,9 @@
 <h1 align="center">
-  MyLibDirectory
+  EasyExternalDirectoryAndroid
 </h1>
 
 <div align="center">
-    <a><img src="https://img.shields.io/badge/Version-1.5.6-brightgreen.svg?style=flat"></a>
+    <a><img src="https://img.shields.io/badge/Version-2.0.0-brightgreen.svg?style=flat"></a>
     <a><img src="https://img.shields.io/badge/ID-gzeinnumer-blue.svg?style=flat"></a>
     <a><img src="https://img.shields.io/badge/Java-Suport-green?logo=java&style=flat"></a>
     <a><img src="https://img.shields.io/badge/Kotlin-Suport-green?logo=kotlin&style=flat"></a>
@@ -36,7 +36,7 @@ allprojects {
 // build.gradle app/module
 dependencies {
   ...
-  implementation 'com.github.gzeinnumer:MyLibDirectory:version'
+  implementation 'com.github.gzeinnumer:EasyExternalDirectoryAndroid:version'
 }
 ```
 
@@ -45,30 +45,30 @@ dependencies {
 
 This library need Permission you can use this step [**MultiPermission**](https://github.com/gzeinnumer/MultiPermition2) or use your own.
 
-#### [Function Global Directory](https://github.com/gzeinnumer/MyLibDirectory/blob/master/README_1.md)
-- [Create Folder](https://github.com/gzeinnumer/MyLibDirectory/blob/master/README_1.md#create-folder)
-- [Is File Exists](https://github.com/gzeinnumer/MyLibDirectory/blob/master/README_1.md#is-file-exists)
-- [Delete Folder](https://github.com/gzeinnumer/MyLibDirectory/blob/master/README_1.md#delete-folder)
+#### [Function Global Directory](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/README_1.md)
+- [Create Folder](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/README_1.md#create-folder)
+- [Is File Exists](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/README_1.md#is-file-exists)
+- [Delete Folder](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/README_1.md#delete-folder)
 
-#### [Function Global File](https://github.com/gzeinnumer/MyLibDirectory/blob/master/README_2.md)
-- [Create File](https://github.com/gzeinnumer/MyLibDirectory/blob/master/README_2.md#create-file)
-- [Is File Exists](https://github.com/gzeinnumer/MyLibDirectory/blob/master/README_2.md#is-file-exists)
-- [Delete File](https://github.com/gzeinnumer/MyLibDirectory/blob/master/README_2.md#delete-file)
-- [Delete All File Inside Folder](https://github.com/gzeinnumer/MyLibDirectory/blob/master/README_2.md#delete-all-file-inside-folder)
-- [Read File](https://github.com/gzeinnumer/MyLibDirectory/blob/master/README_2.md#read-file)
-- [AppentText](https://github.com/gzeinnumer/MyLibDirectory/blob/master/README_2.md#appenttext)
+#### [Function Global File](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/README_2.md)
+- [Create File](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/README_2.md#create-file)
+- [Is File Exists](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/README_2.md#is-file-exists)
+- [Delete File](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/README_2.md#delete-file)
+- [Delete All File Inside Folder](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/README_2.md#delete-all-file-inside-folder)
+- [Read File](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/README_2.md#read-file)
+- [AppentText](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/README_2.md#appenttext)
 
-#### [Function Global Zip](https://github.com/gzeinnumer/MyLibDirectory/blob/master/README_3.md)
-- [Encode Base64/Md5 to Zip](https://github.com/gzeinnumer/MyLibDirectory/blob/master/README_3.md#base64-to-zip)
+#### [Function Global Zip](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/README_3.md)
+- [Encode Base64/Md5 to Zip](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/README_3.md#base64-to-zip)
 
-#### [Function Global Image Camera](https://github.com/gzeinnumer/MyLibDirectory/blob/master/README_4.md)
-- [Take Image From Camera And Compress](https://github.com/gzeinnumer/MyLibDirectory/blob/master/README_4.md#take-image-from-camera-and-compress)
+#### [Function Global Image Camera](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/README_4.md)
+- [Take Image From Camera And Compress](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/README_4.md#take-image-from-camera-and-compress)
 
-#### [Function Global Image Galery](https://github.com/gzeinnumer/MyLibDirectory/blob/master/README_5.md)
-- [Take Image From Galery And Compress](https://github.com/gzeinnumer/MyLibDirectory/blob/master/README_5.md#take-image-from-galery-and-compress)
+#### [Function Global Image Galery](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/README_5.md)
+- [Take Image From Galery And Compress](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/README_5.md#take-image-from-galery-and-compress)
 
-#### [Function Global Image Internet](https://github.com/gzeinnumer/MyLibDirectory/blob/master/README_6.md)
-- [Download Image From Internet](https://github.com/gzeinnumer/MyLibDirectory/blob/master/README_6.md#download-image-from-internet)
+#### [Function Global Image Internet](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/README_6.md)
+- [Download Image From Internet](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/README_6.md#download-image-from-internet)
 
 ---
 # Tech stack and 3rd library
@@ -89,7 +89,7 @@ This library need Permission you can use this step [**MultiPermission**](https:/
 
 **Debug** if you find trouble and function doesn't work you can trace with this
 
-| ![](https://github.com/gzeinnumer/MyLibDirectory/blob/master/assets/debug.jpg) |
+| ![](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/assets/debug.jpg) |
 |:-------------------------------------------------------------------------------|
 | Example `Logcat`                                                               |
 
@@ -116,6 +116,8 @@ This library need Permission you can use this step [**MultiPermission**](https:/
   - Bug Fixing
 - **1.5.6**
   - Bug Fixing
+- **2.0.0**
+  - Support SDK 16
 
 ---
 # Contribution

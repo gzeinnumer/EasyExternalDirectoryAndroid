@@ -1,5 +1,5 @@
 <h1 align="center">
-    MyLibDirectory - Function Global Directory
+    EasyExternalDirectoryAndroid - Function Global Directory
 </h1>
 
 **CRUD Directory.** now we will make `Directory` with simple and fast.
@@ -101,12 +101,12 @@ boolean isDeleted = FGDir.deleteDir("/folder1");
 ```
 
 #
-[FullCode](https://github.com/gzeinnumer/MyLibDirectory/blob/master/example/CreateFolder/MainActivity.java)
+[FullCode](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/example/CreateFolder/MainActivity.java)
 
 [Sample Code And App](https://github.com/gzeinnumer/MyLibDirectoryExample)
 
 Preview :
 
-|![](https://github.com/gzeinnumer/MyLibDirectory/blob/master/assets/example1.jpg)|![](https://github.com/gzeinnumer/MyLibDirectory/blob/master/assets/example2.jpg)|![](https://github.com/gzeinnumer/MyLibDirectory/blob/master/assets/example3.jpg)|![](https://github.com/gzeinnumer/MyLibDirectory/blob/master/assets/example4.jpg)|
+|![](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/assets/example1.jpg)|![](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/assets/example2.jpg)|![](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/assets/example3.jpg)|![](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/assets/example4.jpg)|
 |--|--|--|--|
 |Request Permition |Folder MyLibsTesting created|`folder1` dan `folder2` created|`folder1_1` inside `folder1` has created|

@@ -1,5 +1,5 @@
 <h1 align="center">
-    MyLibDirectory - Function Global Image Camera
+    EasyExternalDirectoryAndroid - Function Global Image Camera
 </h1>
 
 **Take Foto with Camera.** Take foto with camera and save it with small size and keep it HD.
@@ -245,15 +245,15 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 #
-[FullCode](https://github.com/gzeinnumer/MyLibDirectory/blob/master/example/TakeImageFromCameraAndCompress/MainActivity.java)
+[FullCode](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/example/TakeImageFromCameraAndCompress/MainActivity.java)
 
 [Sample Code And App](https://github.com/gzeinnumer/MyLibDirectoryExample)
 
 Preview :
 
-|![](https://github.com/gzeinnumer/MyLibDirectory/blob/master/assets/example10.jpg)|![](https://github.com/gzeinnumer/MyLibDirectory/blob/master/assets/example11.jpg)|![](https://github.com/gzeinnumer/MyLibDirectory/blob/master/assets/example12.jpg)|
+|![](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/assets/example10.jpg)|![](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/assets/example11.jpg)|![](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/assets/example12.jpg)|
 |--|--|--|
 |First Preview|Foto Captured|Foto location on Toast|
-|![](https://github.com/gzeinnumer/MyLibDirectory/blob/master/assets/example13.jpg)|![](https://github.com/gzeinnumer/MyLibDirectory/blob/master/assets/example14.jpg)|![](https://github.com/gzeinnumer/MyLibDirectory/blob/master/assets/example16.jpg)|
+|![](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/assets/example13.jpg)|![](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/assets/example14.jpg)|![](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/assets/example16.jpg)|
 |folder `Foto` automatically created|Photo saved in folder `Foto`|Detail on galery|Small size but ke resolution|-|
 

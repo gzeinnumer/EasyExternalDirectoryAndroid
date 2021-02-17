@@ -1,5 +1,5 @@
 <h1 align="center">
-    MyLibDirectory - Function Global Zip
+    EasyExternalDirectoryAndroid - Function Global Zip
 </h1>
 
 **String Base64 ke Zip.** we will make file zip from Base64 dan extract it to your folder fast and simple.
@@ -107,12 +107,12 @@ public class MainActivity extends AppCompatActivity {
   - Make sure `fileName` is real name from file zip that you decode to Base64 and Md5.
 
 #
-[FullCode](https://github.com/gzeinnumer/MyLibDirectory/blob/master/example/EncodeBase64Md5toZip/MainActivity.java)
+[FullCode](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/example/EncodeBase64Md5toZip/MainActivity.java)
 
 [Sample Code And App](https://github.com/gzeinnumer/MyLibDirectoryExample)
 
 Preview :
 
-| ![](https://github.com/gzeinnumer/MyLibDirectory/blob/master/assets/example2.jpg) | ![](https://github.com/gzeinnumer/MyLibDirectory/blob/master/assets/example7.jpg) | ![](https://github.com/gzeinnumer/MyLibDirectory/blob/master/assets/example8.jpg)          |
+| ![](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/assets/example2.jpg) | ![](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/assets/example7.jpg) | ![](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/assets/example8.jpg)          |
 |:----------------------------------------------------------------------------------|:----------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------|
 | Folder `MyLibsTesting` created                                                    | `ExternalBase64Md5ToZip.zip` inside `MyLibsTesting` created from String Base64    | `ExernalBase64Md5ToZip.db` is the result of extract from file `ExternalBase64Md5ToZip.zip` |

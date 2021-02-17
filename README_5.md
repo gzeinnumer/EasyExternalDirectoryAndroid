@@ -1,5 +1,5 @@
 <h1 align="center">
-    MyLibDirectory - Function Global Image Galery
+    EasyExternalDirectoryAndroid - Function Global Image Galery
 </h1>
 
 **Take foto from galery.** Take foto from galery and save it with small size and keep it HD.
@@ -185,16 +185,16 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 #
-[FullCode](https://github.com/gzeinnumer/MyLibDirectory/blob/master/example/TakeImageFromGalery/MainActivity.java)
+[FullCode](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/example/TakeImageFromGalery/MainActivity.java)
 
 [Sample Code And App](https://github.com/gzeinnumer/MyLibDirectoryExample)
 
 Preview :
 
-| ![](https://github.com/gzeinnumer/MyLibDirectory/blob/master/assets/example17.jpg) | ![](https://github.com/gzeinnumer/MyLibDirectory/blob/master/assets/example18.jpg) | ![](https://github.com/gzeinnumer/MyLibDirectory/blob/master/assets/example19.jpg) |
+| ![](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/assets/example17.jpg) | ![](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/assets/example18.jpg) | ![](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/assets/example19.jpg) |
 |:-----------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------|
 | First Preview                                                                      | Choise media                                                                       | Pick foto                                                                          |
 
-| ![](https://github.com/gzeinnumer/MyLibDirectory/blob/master/assets/example20.jpg) | ![](https://github.com/gzeinnumer/MyLibDirectory/blob/master/assets/example13.jpg) | ![](https://github.com/gzeinnumer/MyLibDirectory/blob/master/assets/example21.jpg) | ![](https://github.com/gzeinnumer/MyLibDirectory/blob/master/assets/example22.jpg) |
+| ![](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/assets/example20.jpg) | ![](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/assets/example13.jpg) | ![](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/assets/example21.jpg) | ![](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/assets/example22.jpg) |
 |:-----------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------|
 | Preview foto                                                                       | Folder `foto` has created                                                          | Foto inside directory that you set before                                          | Detail image on galery                                                             |
