@@ -12,6 +12,8 @@ This library need Permission you can use this step [**MultiPermission**](https:/
 
 | Name                        | Return    | Parameter                                                                             | Description                            |
 |:----------------------------|:----------|:--------------------------------------------------------------------------------------|:---------------------------------------|
+| `initExternalDirectoryName` | `void`    | `String appFolder`     | Function to declare your own app folder on external  |
+| `initExternalDirectoryName` | `void`    | `String appFolder`, `FGDir.MessageCallBack()`      | Function to declare your own app folder on external , and get message callback is error happen |
 | `initFileImageFromInternet` | `boolean` | `Context context, String imgUrl, String saveTo, String filename, ImageView sendImageTo, boolean isNew` | To download image and save to external |
 | `initFileImageFromInternet` | `boolean` | `Context context, String imgUrl, String saveTo, String filename, boolean isNew, CallBack callBack`     | To download image and save to external |
 

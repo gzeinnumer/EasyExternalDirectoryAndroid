@@ -12,6 +12,8 @@ This library need Permission you can use this step [**MultiPermission**](https:/
 
 | Name                          | Return        | Parameter                          | Description                                                               |
 |:------------------------------|:--------------|:-----------------------------------|:-------------------------------------------------------------------------|
+| `initExternalDirectoryName` | `void`    | `String appFolder`     | Function to declare your own app folder on external  |
+| `initExternalDirectoryName` | `void`    | `String appFolder`, `FGDir.MessageCallBack()`      | Function to declare your own app folder on external , and get message callback is error happen |
 | `FileCompressor`              | `Constructor` | `Context context`                  | Constructor default                                                      |
 | `FileCompressor`              | `Constructor` | `Context context, int quality`     | Constructor with custom quality compress                                 |
 | `setDestinationDirectoryPath` | `void`        | `String location`                  | Set location for your image file                                         |

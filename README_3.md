@@ -12,6 +12,8 @@ This library need Permission you can use this step [**MultiPermission**](https:/
 
 | Name                            | Return    | Parameter                                                                                                   | Description                                                          |
 |:--------------------------------|:----------|:------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------|
+| `initExternalDirectoryName` | `void`    | `String appFolder`     | Function to declare your own app folder on external  |
+| `initExternalDirectoryName` | `void`    | `String appFolder`, `FGDir.MessageCallBack()`      | Function to declare your own app folder on external , and get message callback is error happen |
 | `initFileFromStringToZipToFile` | `boolean` | `String fileName, String zipLocation, String base64EncodeFromFile, String md5EncodeFromFile, boolean isNew` | Make file ZIP from Base64 and extract it to your destination folder |
 
 ---

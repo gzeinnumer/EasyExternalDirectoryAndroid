@@ -13,6 +13,7 @@ This library need Permission you can use this step [**MultiPermission**](https:/
 | Name                        | Return    | Parameter              | Description                                          |
 |:----------------------------|:----------|:-----------------------|:-----------------------------------------------------|
 | `initExternalDirectoryName` | `void`    | `String appFolder`     | Function to declare your own app folder on external  |
+| `initExternalDirectoryName` | `void`    | `String appFolder`, `FGDir.MessageCallBack()`      | Function to declare your own app folder on external , and get message callback is error happen |
 | `initFolder`                | `boolean` | `String... folderName` | Make folder in own app folder in external            |
 | `isFileExists`              | `boolean` | `String path`          | To check is `directory` or `file` has created or not |
 | `deleteDir`                 | `boolean` | `String path`          | To Delete `directory` or `file`                      |
