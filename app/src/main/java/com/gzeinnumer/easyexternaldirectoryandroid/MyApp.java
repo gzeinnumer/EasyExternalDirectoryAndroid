@@ -13,6 +13,7 @@ public class MyApp extends Application {
         super.onCreate();
 
         String externalFolderName = getApplicationContext().getString(R.string.app_name); //MyLibsTesting
+//        FGDir.initExternalDirectoryName(externalFolderName);
         FGDir.initExternalDirectoryName(externalFolderName, new FGDir.MessageCallBack() {
             @Override
             public void messageError(String msg) {
