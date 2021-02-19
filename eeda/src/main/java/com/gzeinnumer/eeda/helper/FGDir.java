@@ -1,6 +1,7 @@
 package com.gzeinnumer.eeda.helper;
 
 import android.os.Environment;
+import android.os.StatFs;
 import android.util.Log;
 
 import java.io.File;
@@ -116,6 +117,53 @@ public class FGDir {
             return false;
         }
         return new File(FGDir.getStorageCard + FGDir.appFolder + path).delete();
+    }
+
+    /**
+     * @return Number of kilo bytes available on External storage
+     */
+    public static long getAvailableSpaceInKB() {
+        final long SIZE_KB = 1024L;
+        long availableSpace;
+        StatFs stat = new StatFs(Environment.getExternalStorageDirectory().getPath());
+        availableSpace = (long) stat.getAvailableBlocks() * (long) stat.getBlockSize();
+        return availableSpace / SIZE_KB;
+    }
+
+    /**
+     * @return Number of Mega bytes available on External storage
+     */
+    public static long getAvailableSpaceInMB() {
+        final long SIZE_KB = 1024L;
+        final long SIZE_MB = SIZE_KB * SIZE_KB;
+        long availableSpace;
+        StatFs stat = new StatFs(Environment.getExternalStorageDirectory().getPath());
+        availableSpace = (long) stat.getAvailableBlocks() * (long) stat.getBlockSize();
+        return availableSpace / SIZE_MB;
+    }
+
+    /**
+     * @return Number of gega bytes available on External storage
+     */
+    public static long getAvailableSpaceInGB() {
+        final long SIZE_KB = 1024L;
+        final long SIZE_GB = SIZE_KB * SIZE_KB * SIZE_KB;
+        long availableSpace;
+        StatFs stat = new StatFs(Environment.getExternalStorageDirectory().getPath());
+        availableSpace = (long) stat.getAvailableBlocks() * (long) stat.getBlockSize();
+        return availableSpace / SIZE_GB;
+    }
+
+    public static boolean checkAvailableSpaceInKB(long requestSize) {
+        return getAvailableSpaceInKB() > requestSize;
+    }
+
+    public static boolean checkAvailableSpaceInMB(long requestSize) {
+        return getAvailableSpaceInMB() > requestSize;
+    }
+
+    public static boolean checkAvailableSpaceInGB(long requestSize) {
+        return getAvailableSpaceInGB() > requestSize;
     }
 
     public interface MessageCallBack {

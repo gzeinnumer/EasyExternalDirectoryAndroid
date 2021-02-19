@@ -3,7 +3,7 @@
 </h1>
 
 <div align="center">
-    <a><img src="https://img.shields.io/badge/Version-2.1.0-brightgreen.svg?style=flat"></a>
+    <a><img src="https://img.shields.io/badge/Version-2.2.0-brightgreen.svg?style=flat"></a>
     <a><img src="https://img.shields.io/badge/ID-gzeinnumer-blue.svg?style=flat"></a>
     <a><img src="https://img.shields.io/badge/Java-Suport-green?logo=java&style=flat"></a>
     <a><img src="https://img.shields.io/badge/Kotlin-Suport-green?logo=kotlin&style=flat"></a>
@@ -49,6 +49,7 @@ This library need Permission you can use this step [**MultiPermission**](https:/
 - [Create Folder](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/README_1.md#create-folder)
 - [Is File Exists](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/README_1.md#is-file-exists)
 - [Delete Folder](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/README_1.md#delete-folder)
+- [Check Available Size In Storage](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/README_1.md#check-available-size-in-storage)
 
 #### [Function Global File](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/README_2.md)
 - [Create File](https://github.com/gzeinnumer/EasyExternalDirectoryAndroid/blob/master/README_2.md#create-file)
@@ -120,6 +121,8 @@ This library need Permission you can use this step [**MultiPermission**](https:/
   - Support SDK 16
 - **2.1.0**
   - Message Error CallBack
+- **2.2.0**
+  - Free Space Storage Checker
 
 ---
 # Contribution

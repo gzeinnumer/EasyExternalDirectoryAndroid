@@ -17,6 +17,12 @@ This library need Permission you can use this step [**MultiPermission**](https:/
 | `initFolder`                | `boolean` | `String... folderName` | Make folder in own app folder in external            |
 | `isFileExists`              | `boolean` | `String path`          | To check is `directory` or `file` has created or not |
 | `deleteDir`                 | `boolean` | `String path`          | To Delete `directory` or `file`                      |
+| `getAvailableSpaceInKB`     | `long`    | `none`                 | Check available size in `KB`                         |
+| `getAvailableSpaceInMB`     | `long`    | `none`                 | Check available size in `MB`                         |
+| `getAvailableSpaceInGB`     | `long`    | `none`                 | Check available size in `GB`                         |
+| `checkAvailableSpaceInKB`   | `boolean  | `long requestSize`     | Request empty storage with `KB`                      |
+| `checkAvailableSpaceInMB`   | `boolean  | `long requestSize`     | Request empty storage with `MB`                      |
+| `checkAvailableSpaceInGB`   | `boolean  | `long requestSize`     | Request empty storage with `GB`                      |
 
 ---
 ### Step 1. Enable Fitur.
@@ -110,6 +116,19 @@ boolean isExists = FGDir.isFileExists("/folder1");
 
 ```java
 boolean isDeleted = FGDir.deleteDir("/folder1");
+```
+
+#
+#### Check Available Size In Storage
+```java
+long sizeInKB = getAvailableSpaceInKB();
+long sizeInMB = getAvailableSpaceInMB();
+long sizeInGB = getAvailableSpaceInGB();
+```
+```java
+boolean isSizeAvailable = checkAvailableSpaceInKB(60); //if free space more than 60KB return true
+boolean isSizeAvailable = checkAvailableSpaceInMB(60); //if free space more than 60MB return true
+boolean isSizeAvailable = checkAvailableSpaceInGB(60); //if free space more than 60GB return true
 ```
 
 #
