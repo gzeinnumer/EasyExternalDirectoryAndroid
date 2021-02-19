@@ -1,5 +1,6 @@
 package com.gzeinnumer.eeda.helper.imagePicker;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -25,10 +26,11 @@ public class FileCompressor {
     private Bitmap.CompressFormat compressFormat = Bitmap.CompressFormat.JPEG;
     private int quality = 80;
     private String destinationDirectoryPath;
-    private Context context;
+    @SuppressLint("StaticFieldLeak")
+    private static Context sContext;
 
     public FileCompressor(Context context) {
-        this.context = context;
+        sContext = context;
         destinationDirectoryPath = context.getCacheDir().getPath() + File.separator + "images";
     }
 
@@ -67,7 +69,7 @@ public class FileCompressor {
     }
 
     public File compressToFile(Uri imageFile) throws IOException {
-        File temp = new File(FGFile.getRealPathFromUri(context, imageFile));
+        File temp = new File(FGFile.getRealPathFromUri(sContext, imageFile));
         return compressToFile(temp, temp.getName());
     }
 

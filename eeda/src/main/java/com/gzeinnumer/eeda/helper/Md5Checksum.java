@@ -4,6 +4,9 @@ import java.io.InputStream;
 import java.security.MessageDigest;
 
 public class Md5Checksum {
+
+    public static final String TAG = "Md5Checksum";
+
     private static final char[] hexDigits = "0123456789abcdef".toCharArray();
 
     public static String md5(InputStream is) {
@@ -30,7 +33,7 @@ public class Md5Checksum {
             md5 = sb.toString();
         } catch (Exception e) {
             e.printStackTrace();
-            FGDir.logSystemFunctionGlobal("md5", "Gagal Md5Checksum Exception " + e.getMessage());
+            FGDir.logSystemFunctionGlobal(TAG, "md5", "Gagal Md5Checksum Exception " + e.getMessage(), true);
         }
 
         return md5;

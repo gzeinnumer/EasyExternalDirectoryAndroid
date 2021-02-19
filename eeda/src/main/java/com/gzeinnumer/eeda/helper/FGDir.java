@@ -7,11 +7,20 @@ import java.io.File;
 
 public class FGDir {
 
+    public static final String TAG = "FGDir";
+
     public final static String getStorageCard = Environment.getExternalStorageDirectory().toString();
     public static String appFolder = "";
 
-    public static void logSystemFunctionGlobal(String function, String msg) {
+    private static MessageCallBack mCallBack;
+
+    public static void logSystemFunctionGlobal(String tag, String function, String msg, boolean display) {
         Log.d("MyLibDirectory_Debug", function + "_" + msg);
+        if (display) {
+            if (mCallBack != null) {
+                mCallBack.messageError(tag + "\n" + function + "\n" + msg);
+            }
+        }
     }
 
     public static void myLogD(String tag, String msg) {
@@ -20,7 +29,19 @@ public class FGDir {
 
     public static void initExternalDirectoryName(String appFolder) {
         if (appFolder == null) {
-            logSystemFunctionGlobal("initExternalDirectoryName", "AppFolder tidak boleh null");
+            logSystemFunctionGlobal(TAG, "initExternalDirectoryName", "AppFolder tidak boleh null", true);
+            return;
+        }
+        if (!appFolder.startsWith("/")) {
+            appFolder = "/" + appFolder;
+        }
+        FGDir.appFolder = appFolder;
+    }
+
+    public static void initExternalDirectoryName(String appFolder, MessageCallBack callBack) {
+        mCallBack = callBack;
+        if (appFolder == null) {
+            logSystemFunctionGlobal(TAG, "initExternalDirectoryName", "AppFolder tidak boleh null", true);
             return;
         }
         if (!appFolder.startsWith("/")) {
@@ -31,11 +52,11 @@ public class FGDir {
 
     public static boolean initFolder(String... folderName) {
         if (folderName == null) {
-            logSystemFunctionGlobal("initFolder", "FolderName tidak boleh null");
+            logSystemFunctionGlobal(TAG, "initFolder", "FolderName tidak boleh null", true);
             return false;
         }
         if (appFolder.length() == 0) {
-            logSystemFunctionGlobal("initFolder", "Folder External untuk aplikasi belum dideklarasi");
+            logSystemFunctionGlobal(TAG, "initFolder", "Folder External untuk aplikasi belum dideklarasi", true);
             return false;
         }
         File folder;
@@ -44,7 +65,7 @@ public class FGDir {
         folder = new File(getStorageCard + appFolder);
         if (!folder.exists()) {
             if (!creatingFolder(folder)) {
-                logSystemFunctionGlobal("initFolder", "Gagal membuat direktory External untuk aplikasi");
+                logSystemFunctionGlobal(TAG, "initFolder", "Gagal membuat direktory External untuk aplikasi", false);
                 return false;
             }
         }
@@ -57,7 +78,7 @@ public class FGDir {
                     folder = new File(getStorageCard + appFolder + s);
                     if (!folder.exists()) {
                         if (!creatingFolder(folder)) {
-                            logSystemFunctionGlobal("initFolder", "Gagal membuat direktory " + s);
+                            logSystemFunctionGlobal(TAG, "initFolder", "Gagal membuat direktory " + s, false);
                             return false;
                         }
                     }
@@ -71,10 +92,10 @@ public class FGDir {
     private static boolean creatingFolder(File folder) {
         try {
             if (folder.mkdirs()) {
-                logSystemFunctionGlobal("creatingFolder", "Success menjalankan mkdirs direktory External untuk aplikasi ");
+                logSystemFunctionGlobal(TAG, "creatingFolder", "Success menjalankan mkdirs direktory External untuk aplikasi ", false);
             }
         } catch (Exception e) {
-            logSystemFunctionGlobal("creatingFolder", "Gagal menjalankan mkdirs direktory External untuk aplikasi " + e.getMessage());
+            logSystemFunctionGlobal(TAG, "creatingFolder", "Gagal menjalankan mkdirs direktory External untuk aplikasi " + e.getMessage(), true);
             return false;
         }
         return true;
@@ -82,7 +103,7 @@ public class FGDir {
 
     public static boolean isFileExists(String path) {
         if (path == null) {
-            logSystemFunctionGlobal("isFileExists", "Path tidak boleh null");
+            logSystemFunctionGlobal(TAG, "isFileExists", "Path tidak boleh null", true);
             return false;
         }
         File file = new File(getStorageCard + appFolder + path);
@@ -90,6 +111,14 @@ public class FGDir {
     }
 
     public static boolean deleteDir(String path) {
+        if (path == null) {
+            logSystemFunctionGlobal(TAG, "deleteDir", "Path tidak boleh null", true);
+            return false;
+        }
         return new File(FGDir.getStorageCard + FGDir.appFolder + path).delete();
+    }
+
+    public interface MessageCallBack {
+        void messageError(String msg);
     }
 }

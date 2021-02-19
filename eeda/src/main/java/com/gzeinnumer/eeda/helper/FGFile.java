@@ -33,32 +33,34 @@ import static com.gzeinnumer.eeda.helper.FGDir.logSystemFunctionGlobal;
 
 public class FGFile {
 
+    public static final String TAG = "FGFile";
+
     ImageLoadCallBack imageLoadCallBack;
 
     //create file
     public static boolean initFile(String fileName, String saveTo, String... text) {
         if (fileName == null) {
-            logSystemFunctionGlobal("initFile", "FileName tidak boleh null");
+            logSystemFunctionGlobal(TAG, "initFile", "FileName tidak boleh null", true);
             return false;
         }
         if (saveTo == null) {
-            logSystemFunctionGlobal("initFile", "SaveTo tidak boleh null");
+            logSystemFunctionGlobal(TAG, "initFile", "SaveTo tidak boleh null", true);
             return false;
         }
         if (text == null) {
-            logSystemFunctionGlobal("initFile", "Text tidak boleh null");
+            logSystemFunctionGlobal(TAG, "initFile", "Text tidak boleh null", true);
             return false;
         }
         if (FGDir.appFolder.length() == 0) {
-            logSystemFunctionGlobal("initFile", "Folder External untuk aplikasi belum di deklarasi");
+            logSystemFunctionGlobal(TAG, "initFile", "Folder External untuk aplikasi belum di deklarasi", true);
             return false;
         }
         if (!FGDir.isFileExists("")) {
-            logSystemFunctionGlobal("initFile", "Folder External untuk aplikasi tidak di temukan");
+            logSystemFunctionGlobal(TAG, "initFile", "Folder External untuk aplikasi tidak di temukan", false);
             if (FGDir.initFolder("")) {
-                logSystemFunctionGlobal("initFile", "Folder External sudah dibuat");
+                logSystemFunctionGlobal(TAG, "initFile", "Folder External sudah dibuat", false);
             } else {
-                logSystemFunctionGlobal("initFile", "Folder External gagal dibuat");
+                logSystemFunctionGlobal(TAG, "initFile", "Folder External gagal dibuat", false);
                 return false;
             }
         }
@@ -66,7 +68,7 @@ public class FGFile {
             saveTo = "/" + saveTo;
         }
         if (!FGDir.isFileExists(saveTo)) {
-            logSystemFunctionGlobal("initFile", "Folder External untuk aplikasi tidak di temukan");
+            logSystemFunctionGlobal(TAG, "initFile", "Folder External untuk aplikasi tidak di temukan", false);
             String path = saveTo.substring(1);
             char someChar = '/';
             int count = 0;
@@ -84,23 +86,23 @@ public class FGFile {
                     }
                     currentPath = currentPath + d;
                     if (FGDir.initFolder(currentPath)) {
-                        logSystemFunctionGlobal("initFile", "Folder External sudah dibuat");
+                        logSystemFunctionGlobal(TAG, "initFile", "Folder External sudah dibuat", false);
                     } else {
-                        logSystemFunctionGlobal("initFile", "Folder External gagal dibuat");
+                        logSystemFunctionGlobal(TAG, "initFile", "Folder External gagal dibuat", false);
                         return false;
                     }
                 }
             } else {
                 if (FGDir.initFolder(path)) {
-                    logSystemFunctionGlobal("initFile", "Folder External sudah dibuat");
+                    logSystemFunctionGlobal(TAG, "initFile", "Folder External sudah dibuat", false);
                 } else {
-                    logSystemFunctionGlobal("initFile", "Folder External gagal dibuat");
+                    logSystemFunctionGlobal(TAG, "initFile", "Folder External gagal dibuat", false);
                     return false;
                 }
             }
         }
         if (fileName.length() == 0) {
-            logSystemFunctionGlobal("initFile", "FileName tidak boleh kosong");
+            logSystemFunctionGlobal(TAG, "initFile", "FileName tidak boleh kosong", true);
             return false;
         }
         if (!fileName.startsWith("/")) {
@@ -128,7 +130,7 @@ public class FGFile {
             return true;
         } catch (IOException e) {
             e.printStackTrace();
-            logSystemFunctionGlobal("processFile", "Gagal membuat file " + e.getMessage());
+            logSystemFunctionGlobal(TAG, "processFile", "Gagal membuat file " + e.getMessage(), true);
             return false;
         }
     }
@@ -136,22 +138,22 @@ public class FGFile {
     public static List<String> readFile(String path) {
         List<String> list = new ArrayList<>();
         if (path == null) {
-            logSystemFunctionGlobal("readFile", "Path tidak boleh null");
+            logSystemFunctionGlobal(TAG, "readFile", "Path tidak boleh null", true);
             return list;
         }
         if (FGDir.appFolder.length() == 0) {
-            logSystemFunctionGlobal("readFile", "Folder External untuk aplikasi belum dideklarasi");
+            logSystemFunctionGlobal(TAG, "readFile", "Folder External untuk aplikasi belum dideklarasi", true);
             return list;
         }
         if (path.length() == 0) {
-            logSystemFunctionGlobal("readFile", "Path tidak boleh kosong");
+            logSystemFunctionGlobal(TAG, "readFile", "Path tidak boleh kosong", true);
             return list;
         }
         if (!path.startsWith("/")) {
             path = "/" + path;
         }
         if (!FGDir.isFileExists(path)) {
-            logSystemFunctionGlobal("readFile", "File tidak ditemukan");
+            logSystemFunctionGlobal(TAG, "readFile", "File tidak ditemukan", true);
             return list;
         }
 
@@ -162,7 +164,7 @@ public class FGFile {
             input = new Scanner(file);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            logSystemFunctionGlobal("readFile", "Gagal membaca file");
+            logSystemFunctionGlobal(TAG, "readFile", "Gagal membaca file", true);
             return list;
         }
 
@@ -174,35 +176,35 @@ public class FGFile {
 
     public static boolean appentText(String path, String... msg) {
         if (path == null) {
-            logSystemFunctionGlobal("appentText", "Path tidak boleh null");
+            logSystemFunctionGlobal(TAG, "appentText", "Path tidak boleh null", true);
             return false;
         }
         if (msg == null) {
-            logSystemFunctionGlobal("appentText", "Path tidak boleh null");
+            logSystemFunctionGlobal(TAG, "appentText", "Path tidak boleh null", true);
             return false;
         }
         if (FGDir.appFolder.length() == 0) {
-            logSystemFunctionGlobal("appentText", "Folder External untuk aplikasi belum dideklarasi");
+            logSystemFunctionGlobal(TAG, "appentText", "Folder External untuk aplikasi belum dideklarasi", true);
             return false;
         }
         if (!FGDir.isFileExists("")) {
-            logSystemFunctionGlobal("appentText", "Folder External untuk aplikasi tidak di temukan");
+            logSystemFunctionGlobal(TAG, "appentText", "Folder External untuk aplikasi tidak di temukan", false);
             if (FGDir.initFolder("")) {
-                logSystemFunctionGlobal("appentText", "Folder External sudah dibuat");
+                logSystemFunctionGlobal(TAG, "appentText", "Folder External sudah dibuat", false);
             } else {
-                logSystemFunctionGlobal("appentText", "Folder External gagal dibuat");
+                logSystemFunctionGlobal(TAG, "appentText", "Folder External gagal dibuat", false);
                 return false;
             }
         }
         if (path.length() == 0) {
-            logSystemFunctionGlobal("appentText", "Path tidak boleh kosong");
+            logSystemFunctionGlobal(TAG, "appentText", "Path tidak boleh kosong", true);
             return false;
         }
         if (!path.startsWith("/")) {
             path = "/" + path;
         }
         if (!FGDir.isFileExists(path)) {
-            logSystemFunctionGlobal("appentText", "File tidak ditemukan");
+            logSystemFunctionGlobal(TAG, "appentText", "File tidak ditemukan", true);
             return false;
         }
         FileWriter fw;
@@ -217,7 +219,7 @@ public class FGFile {
             return true;
         } catch (IOException e) {
             e.printStackTrace();
-            logSystemFunctionGlobal("appentText", "Gagal mengapent text ke file " + e.getMessage());
+            logSystemFunctionGlobal(TAG, "appentText", "Gagal mengapent text ke file " + e.getMessage(), true);
             return false;
         }
     }
@@ -228,30 +230,30 @@ public class FGFile {
     @Deprecated
     public static void initFileImageFromInternet(final String imgUrl, final String saveTo, final String filename, final ImageView sendImageTo, final boolean isNew) {
         if (imgUrl == null) {
-            logSystemFunctionGlobal("initFileImageFromInternet", "ImgUrl tidak boleh null");
+            logSystemFunctionGlobal(TAG, "initFileImageFromInternet", "ImgUrl tidak boleh null", true);
             return;
         }
         if (saveTo == null) {
-            logSystemFunctionGlobal("initFileImageFromInternet", "SaveTo tidak boleh null");
+            logSystemFunctionGlobal(TAG, "initFileImageFromInternet", "SaveTo tidak boleh null", true);
             return;
         }
         if (filename == null) {
-            logSystemFunctionGlobal("initFileImageFromInternet", "Filename tidak boleh null");
+            logSystemFunctionGlobal(TAG, "initFileImageFromInternet", "Filename tidak boleh null", true);
             return;
         }
         if (sendImageTo == null) {
-            logSystemFunctionGlobal("initFileImageFromInternet", "SendImageTo tidak boleh null");
+            logSystemFunctionGlobal(TAG, "initFileImageFromInternet", "SendImageTo tidak boleh null", true);
             return;
         }
         if (FGDir.appFolder.length() == 0) {
-            logSystemFunctionGlobal("initFileImageFromInternet", "Folder External untuk aplikasi belum dideklarasi");
+            logSystemFunctionGlobal(TAG, "initFileImageFromInternet", "Folder External untuk aplikasi belum dideklarasi", true);
         }
         if (!FGDir.isFileExists("")) {
-            logSystemFunctionGlobal("initFileImageFromInternet", "Folder External untuk aplikasi tidak di temukan");
+            logSystemFunctionGlobal(TAG, "initFileImageFromInternet", "Folder External untuk aplikasi tidak di temukan", false);
             if (FGDir.initFolder("")) {
-                logSystemFunctionGlobal("initFileImageFromInternet", "Folder External sudah dibuat");
+                logSystemFunctionGlobal(TAG, "initFileImageFromInternet", "Folder External sudah dibuat", false);
             } else {
-                logSystemFunctionGlobal("initFileImageFromInternet", "Folder External gagal dibuat");
+                logSystemFunctionGlobal(TAG, "initFileImageFromInternet", "Folder External gagal dibuat", false);
             }
         }
         File myDir = new File(FGDir.getStorageCard + FGDir.appFolder + saveTo);
@@ -275,7 +277,7 @@ public class FGFile {
                                       if (!finalMyDir.exists() || isNew) {
                                           //jika isNew true maka foto lama akan dihapus dan diganti dengan yang baru
                                           //jika file tidak ditemukan maka file akan dibuat
-                                          logSystemFunctionGlobal("initFileImageFromInternet", "Foto baru disimpan ke penyimpanan");
+                                          logSystemFunctionGlobal(TAG, "initFileImageFromInternet", "Foto baru disimpan ke penyimpanan", false);
                                           FileOutputStream out = new FileOutputStream(finalMyDir);
                                           bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
 
@@ -283,18 +285,18 @@ public class FGFile {
                                           out.close();
                                       } else {
                                           //jika isNew false maka akan load file lama di penyimpanan
-                                          logSystemFunctionGlobal("initFileImageFromInternet", "Foto lama di load dari penyimpanan");
+                                          logSystemFunctionGlobal(TAG, "initFileImageFromInternet", "Foto lama di load dari penyimpanan", false);
                                           bitmap = BitmapFactory.decodeFile(finalMyDir.getAbsolutePath());
                                       }
                                       sendImageTo.setImageBitmap(bitmap);
                                   } catch (Exception e) {
-                                      logSystemFunctionGlobal("initFileImageFromInternet", e.getMessage());
+                                      logSystemFunctionGlobal(TAG, "initFileImageFromInternet", e.getMessage(), true);
                                   }
                               }
 
                               @Override
                               public void onBitmapFailed(Exception e, Drawable errorDrawable) {
-                                  logSystemFunctionGlobal("initFileImageFromInternet", e.getMessage());
+                                  logSystemFunctionGlobal(TAG, "initFileImageFromInternet", e.getMessage(), true);
                               }
 
                               @Override
@@ -303,7 +305,7 @@ public class FGFile {
                           }
                     );
         } else {
-            logSystemFunctionGlobal("initFileImageFromInternet", "Foto lama di load dari penyimpanan");
+            logSystemFunctionGlobal(TAG, "initFileImageFromInternet", "Foto lama di load dari penyimpanan", false);
             Bitmap bitmap = BitmapFactory.decodeFile(myDir.getAbsolutePath());
             sendImageTo.setImageBitmap(bitmap);
         }
@@ -311,30 +313,30 @@ public class FGFile {
 
     public static void initFileImageFromInternet(final Context context, final String imgUrl, final String saveTo, final String filename, final boolean isNew, final ImageLoadCallBack imageLoadCallBack) {
         if (imgUrl == null) {
-            logSystemFunctionGlobal("initFileImageFromInternet", "ImgUrl tidak boleh null");
+            logSystemFunctionGlobal(TAG, "initFileImageFromInternet", "ImgUrl tidak boleh null", true);
             return;
         }
         if (saveTo == null) {
-            logSystemFunctionGlobal("initFileImageFromInternet", "SaveTo tidak boleh null");
+            logSystemFunctionGlobal(TAG, "initFileImageFromInternet", "SaveTo tidak boleh null", true);
             return;
         }
         if (filename == null) {
-            logSystemFunctionGlobal("initFileImageFromInternet", "Filename tidak boleh null");
+            logSystemFunctionGlobal(TAG, "initFileImageFromInternet", "Filename tidak boleh null", true);
             return;
         }
         if (imageLoadCallBack == null) {
-            logSystemFunctionGlobal("initFileImageFromInternet", "ImageLoadCallBack tidak boleh null");
+            logSystemFunctionGlobal(TAG, "initFileImageFromInternet", "ImageLoadCallBack tidak boleh null", true);
             return;
         }
         if (FGDir.appFolder.length() == 0) {
-            logSystemFunctionGlobal("initFileImageFromInternet", "Folder External untuk aplikasi belum dideklarasi");
+            logSystemFunctionGlobal(TAG, "initFileImageFromInternet", "Folder External untuk aplikasi belum dideklarasi", true);
         }
         if (!FGDir.isFileExists("")) {
-            logSystemFunctionGlobal("initFileImageFromInternet", "Folder External untuk aplikasi tidak di temukan");
+            logSystemFunctionGlobal(TAG, "initFileImageFromInternet", "Folder External untuk aplikasi tidak di temukan", false);
             if (FGDir.initFolder("")) {
-                logSystemFunctionGlobal("initFileImageFromInternet", "Folder External sudah dibuat");
+                logSystemFunctionGlobal(TAG, "initFileImageFromInternet", "Folder External sudah dibuat", false);
             } else {
-                logSystemFunctionGlobal("initFileImageFromInternet", "Folder External gagal dibuat");
+                logSystemFunctionGlobal(TAG, "initFileImageFromInternet", "Folder External gagal dibuat", false);
             }
         }
         File myDir = new File(FGDir.getStorageCard + FGDir.appFolder + saveTo);
@@ -359,7 +361,7 @@ public class FGFile {
                                       if (!finalMyDir.exists() || isNew) {
                                           //jika isNew true maka foto lama akan dihapus dan diganti dengan yang baru
                                           //jika file tidak ditemukan maka file akan dibuat
-                                          logSystemFunctionGlobal("initFileImageFromInternet", "Foto baru disimpan ke penyimpanan");
+                                          logSystemFunctionGlobal(TAG, "initFileImageFromInternet", "Foto baru disimpan ke penyimpanan", false);
                                           FileOutputStream out = new FileOutputStream(finalMyDir);
                                           bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
 
@@ -370,7 +372,7 @@ public class FGFile {
 
                                       } else {
                                           //jika isNew false maka akan load file lama di penyimpanan
-                                          logSystemFunctionGlobal("initFileImageFromInternet", "Foto lama di load dari penyimpanan");
+                                          logSystemFunctionGlobal(TAG, "initFileImageFromInternet", "Foto lama di load dari penyimpanan", false);
                                           bitmap = BitmapFactory.decodeFile(finalMyDir.getAbsolutePath());
 
                                           msg = "Load Old Foto";
@@ -378,13 +380,13 @@ public class FGFile {
 
                                       imageLoadCallBack.onBitmapReturn(bitmap, finalMyDir.toString(), msg);
                                   } catch (Exception e) {
-                                      logSystemFunctionGlobal("initFileImageFromInternet", e.getMessage());
+                                      logSystemFunctionGlobal(TAG, "initFileImageFromInternet", e.getMessage(), true);
                                   }
                               }
 
                               @Override
                               public void onBitmapFailed(Exception e, Drawable errorDrawable) {
-                                  logSystemFunctionGlobal("initFileImageFromInternet", e.getMessage());
+                                  logSystemFunctionGlobal(TAG, "initFileImageFromInternet", e.getMessage(), true);
 
                                   imageLoadCallBack.onBitmapReturn(drawableToBitmap(ContextCompat.getDrawable(context, R.drawable.ic_baseline_broken_image_24)), finalMyDir.toString(), e.getMessage());
                               }
@@ -396,7 +398,7 @@ public class FGFile {
                           }
                     );
         } else {
-            logSystemFunctionGlobal("initFileImageFromInternet", "Foto lama di load dari penyimpanan");
+            logSystemFunctionGlobal(TAG, "initFileImageFromInternet", "Foto lama di load dari penyimpanan", false);
             Bitmap bitmap = BitmapFactory.decodeFile(myDir.getAbsolutePath());
             imageLoadCallBack.onBitmapReturn(bitmap, myDir.toString(), "Load Old Foto");
         }
@@ -448,7 +450,7 @@ public class FGFile {
 
     public static boolean deleteDir(String path) {
         if (FGDir.appFolder.length() == 0) {
-            logSystemFunctionGlobal("deleteDir", "Folder External untuk aplikasi belum dideklarasi");
+            logSystemFunctionGlobal(TAG, "deleteDir", "Folder External untuk aplikasi belum dideklarasi", true);
             return false;
         }
         return new File(FGDir.getStorageCard + FGDir.appFolder + path).delete();
@@ -456,7 +458,7 @@ public class FGFile {
 
     public static void deleteAllFile(String path) {
         if (FGDir.appFolder.length() == 0) {
-            logSystemFunctionGlobal("deleteAllFile", "Folder External untuk aplikasi belum dideklarasi");
+            logSystemFunctionGlobal(TAG, "deleteAllFile", "Folder External untuk aplikasi belum dideklarasi", true);
             return;
         }
         deleteAllFileProcess(new File(FGDir.getStorageCard + FGDir.appFolder + path));
@@ -477,11 +479,11 @@ public class FGFile {
 
     public static boolean isFileExists(String path) {
         if (path == null) {
-            logSystemFunctionGlobal("isFileExists", "Path tidak boleh null");
+            logSystemFunctionGlobal(TAG, "isFileExists", "Path tidak boleh null", true);
             return false;
         }
         if (FGDir.appFolder.length() == 0) {
-            logSystemFunctionGlobal("deleteAllFile", "Folder External untuk aplikasi belum dideklarasi");
+            logSystemFunctionGlobal(TAG, "deleteAllFile", "Folder External untuk aplikasi belum dideklarasi", true);
             return false;
         }
         File file = new File(FGDir.getStorageCard + FGDir.appFolder + path);

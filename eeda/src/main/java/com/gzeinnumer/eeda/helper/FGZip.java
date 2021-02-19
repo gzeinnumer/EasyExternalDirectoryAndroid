@@ -18,85 +18,87 @@ import static com.gzeinnumer.eeda.helper.FGDir.logSystemFunctionGlobal;
 
 public class FGZip {
 
+    public static final String TAG = "FGZip";
+
     //start genFile
     //jika ingin replace file yang sudah ada, maka beri flag true, jika tidak maka false saja
     public static boolean initFileFromStringToZipToFile(String fileName, String zipLocation, String base64EncodeFromFile, String md5EncodeFromFile, boolean isNew) {
         if (fileName == null) {
-            logSystemFunctionGlobal("initFileFromStringToZipToFile", "FileName tidak boleh null");
+            logSystemFunctionGlobal(TAG, "initFileFromStringToZipToFile", "FileName tidak boleh null", true);
             return false;
         }
         if (zipLocation == null) {
-            logSystemFunctionGlobal("initFileFromStringToZipToFile", "ZipLocation tidak boleh null");
+            logSystemFunctionGlobal(TAG, "initFileFromStringToZipToFile", "ZipLocation tidak boleh null", true);
             return false;
         }
         if (base64EncodeFromFile == null) {
-            logSystemFunctionGlobal("initFileFromStringToZipToFile", "Base64EncodeFromFile tidak boleh null");
+            logSystemFunctionGlobal(TAG, "initFileFromStringToZipToFile", "Base64EncodeFromFile tidak boleh null", true);
             return false;
         }
         if (md5EncodeFromFile == null) {
-            logSystemFunctionGlobal("initFileFromStringToZipToFile", "Md5EncodeFromFile tidak boleh null");
+            logSystemFunctionGlobal(TAG, "initFileFromStringToZipToFile", "Md5EncodeFromFile tidak boleh null", true);
             return false;
         }
         if (FGDir.appFolder.length() == 0) {
-            logSystemFunctionGlobal("initFileFromStringToZipToFile", "Folder External untuk aplikasi belum dideklarasi");
+            logSystemFunctionGlobal(TAG, "initFileFromStringToZipToFile", "Folder External untuk aplikasi belum dideklarasi", true);
             return false;
         }
         if (!FGDir.isFileExists("")) {
-            logSystemFunctionGlobal("initFileFromStringToZipToFile", "Folder External untuk aplikasi tidak di temukan");
+            logSystemFunctionGlobal(TAG, "initFileFromStringToZipToFile", "Folder External untuk aplikasi tidak di temukan", false);
             if (FGDir.initFolder("")) {
-                logSystemFunctionGlobal("initFileFromStringToZipToFile", "Folder External sudah dibuat");
+                logSystemFunctionGlobal(TAG, "initFileFromStringToZipToFile", "Folder External sudah dibuat", false);
             } else {
-                logSystemFunctionGlobal("initFileFromStringToZipToFile", "Folder External gagal dibuat");
+                logSystemFunctionGlobal(TAG, "initFileFromStringToZipToFile", "Folder External gagal dibuat", false);
                 return false;
             }
         }
         if (fileName.length() == 0) {
-            logSystemFunctionGlobal("initFileFromStringToZipToFile", "FileName tidak boleh kosong");
+            logSystemFunctionGlobal(TAG, "initFileFromStringToZipToFile", "FileName tidak boleh kosong", true);
             return false;
         }
         if (!fileName.startsWith("/")) {
             fileName = "/" + fileName;
         }
         if (zipLocation.length() == 0) {
-            logSystemFunctionGlobal("initFileFromStringToZipToFile", "ZipLocation tidak boleh kosong");
+            logSystemFunctionGlobal(TAG, "initFileFromStringToZipToFile", "ZipLocation tidak boleh kosong", true);
             return false;
         }
         if (!zipLocation.startsWith("/")) {
             zipLocation = "/" + zipLocation;
         }
         if (base64EncodeFromFile.length() == 0) {
-            logSystemFunctionGlobal("initFileFromStringToZipToFile", "Base64EncodeFromFile tidak boleh kosong");
+            logSystemFunctionGlobal(TAG, "initFileFromStringToZipToFile", "Base64EncodeFromFile tidak boleh kosong", true);
             return false;
         }
         if (md5EncodeFromFile.length() == 0) {
-            logSystemFunctionGlobal("initFileFromStringToZipToFile", "Md5EncodeFromFile tidak boleh kosong");
+            logSystemFunctionGlobal(TAG, "initFileFromStringToZipToFile", "Md5EncodeFromFile tidak boleh kosong", true);
             return false;
         }
         if (FGDir.isFileExists(fileName) && !isNew) {
-            logSystemFunctionGlobal("initFileFromStringToZipToFile", "File sudah dibuat");
+            logSystemFunctionGlobal(TAG, "initFileFromStringToZipToFile", "File sudah dibuat", true);
             return true;
         } else {
             if (converToZip(fileName, base64EncodeFromFile)) {
                 if (compareMd5(fileName, md5EncodeFromFile)) {
                     try {
                         if (unzip(fileName, zipLocation)) {
-                            logSystemFunctionGlobal("initFileFromStringToZipToFile", "Success membuat file zip");
+                            logSystemFunctionGlobal(TAG, "initFileFromStringToZipToFile", "Success membuat file zip", false);
                             return true;
                         } else {
-                            logSystemFunctionGlobal("initFileFromStringToZipToFile", "Gagal membuat file zip");
+                            logSystemFunctionGlobal(TAG, "initFileFromStringToZipToFile", "Gagal membuat file zip", false);
                             return false;
                         }
                     } catch (IOException e) {
                         e.printStackTrace();
-                        logSystemFunctionGlobal("initFileFromStringToZipToFile", "Gagal membuat file zip " + e.getMessage());
+                        logSystemFunctionGlobal(TAG, "initFileFromStringToZipToFile", "Gagal membuat file zip " + e.getMessage(), true);
                         return false;
                     }
                 } else {
-                    logSystemFunctionGlobal("initFileFromStringToZipToFile", "Gagal compareMd5 ");
+                    logSystemFunctionGlobal(TAG, "initFileFromStringToZipToFile", "Gagal compareMd5 ", false);
                     return false;
                 }
             } else {
-                logSystemFunctionGlobal("initFileFromStringToZipToFile", "Gagal converToZip ");
+                logSystemFunctionGlobal(TAG, "initFileFromStringToZipToFile", "Gagal converToZip ", false);
                 return false;
             }
         }
@@ -116,29 +118,32 @@ public class FGZip {
                 return true;
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
-                logSystemFunctionGlobal("converToZip", "Gagal converToZip File Not Found " + e.getMessage());
+                logSystemFunctionGlobal(TAG, "converToZip", "Gagal converToZip File Not Found " + e.getMessage(), true);
                 return false;
             } catch (IOException e) {
                 e.printStackTrace();
-                logSystemFunctionGlobal("converToZip", "Gagal converToZip IOException " + e.getMessage());
+                logSystemFunctionGlobal(TAG, "converToZip", "Gagal converToZip IOException " + e.getMessage(), true);
                 return false;
             }
         } catch (Exception e) {
             e.printStackTrace();
+            logSystemFunctionGlobal(TAG, "converToZip", "Gagal converToZip Exception " + e.getMessage(), true);
             return false;
         }
     }
 
     private static boolean compareMd5(String fileName, String md5OriginValue) {
         try {
-            String md5Origin = md5OriginValue;
             String filePath = FGDir.getStorageCard + FGDir.appFolder + fileName;
             FileInputStream fis = new FileInputStream(filePath);
             String md5Checksum = Md5Checksum.md5(fis);
-            return md5Checksum.equals(md5Origin);
+            boolean isCompare = md5Checksum.equals(md5OriginValue);
+            if (!isCompare)
+                logSystemFunctionGlobal(TAG, "compareMd5", "Md5 Code Match " + false, true);
+            return isCompare;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            logSystemFunctionGlobal("compareMd5", "Gagal compareMd5 FileNotFoundException " + e.getMessage());
+            logSystemFunctionGlobal(TAG, "compareMd5", "Gagal compareMd5 FileNotFoundException " + e.getMessage(), true);
         }
         return false;
     }

@@ -30,7 +30,18 @@ public class MyApp extends Application {
         super.onCreate();
 
         String externalFolderName = getApplicationContext().getString(R.string.app_name); //MyLibsTesting
+
+        //type 1
         FGDir.initExternalDirectoryName(externalFolderName);
+
+        //type 2
+        //if you want to trace the error tou can use this callback
+        FGDir.initExternalDirectoryName(externalFolderName, new FGDir.MessageCallBack() {
+            @Override
+            public void messageError(String msg) {
+                Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
 ```
