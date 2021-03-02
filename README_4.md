@@ -184,11 +184,11 @@ public class MainActivity extends AppCompatActivity {
     ...
 
     //1
-    static final int REQUEST_TAKE_PHOTO = 2;
-    File mPhotoFile;
-    FileCompressor mCompressor;
-    Button btnCamera;
-    ImageView imageView;
+    private static final int REQUEST_TAKE_PHOTO = 2;
+    private File mPhotoFile;
+    private FileCompressor mCompressor;
+    private Button btnCamera;
+    private ImageView imageView;
 
     private void onSuccessCheckPermitions() {
         //2
