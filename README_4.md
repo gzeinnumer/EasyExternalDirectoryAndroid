@@ -240,13 +240,15 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             if (requestCode == REQUEST_TAKE_PHOTO) {
-                try {
-                    //setelah foto diambil, dan tampil di preview maka akan lansung disimpan ke folder yang di sudah diset sebelumnya
-                    mPhotoFile = mCompressor.compressToFile(mPhotoFile);
-                    Glide.with(MainActivity.this).load(mPhotoFile).into(imageView);
-                    Toast.makeText(this, "Image Path : "+mPhotoFile.toString(), Toast.LENGTH_SHORT).show();
-                } catch (IOException e) {
-                    e.printStackTrace();
+                if (data.getExtras().get("data") != null) {
+                    try {
+                        //setelah foto diambil, dan tampil di preview maka akan lansung disimpan ke folder yang di sudah diset sebelumnya
+                        mPhotoFile = mCompressor.compressToFile(mPhotoFile);
+                        Glide.with(MainActivity.this).load(mPhotoFile).into(imageView);
+                        Toast.makeText(this, "Image Path : "+mPhotoFile.toString(), Toast.LENGTH_SHORT).show();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }
