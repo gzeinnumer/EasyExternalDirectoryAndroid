@@ -185,7 +185,7 @@ public class MainActivity extends AppCompatActivity {
 
     //1
     private static final int REQUEST_TAKE_PHOTO = 2;
-    private File mPhotoFile;
+    private static File mPhotoFile;
     private FileCompressor mCompressor;
     private Button btnCamera;
     private ImageView imageView;
@@ -240,15 +240,13 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             if (requestCode == REQUEST_TAKE_PHOTO) {
-                if (data.getExtras().get("data") != null) {
-                    try {
-                        //setelah foto diambil, dan tampil di preview maka akan lansung disimpan ke folder yang di sudah diset sebelumnya
-                        mPhotoFile = mCompressor.compressToFile(mPhotoFile);
-                        Glide.with(MainActivity.this).load(mPhotoFile).into(imageView);
-                        Toast.makeText(this, "Image Path : "+mPhotoFile.toString(), Toast.LENGTH_SHORT).show();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                try {
+                    //setelah foto diambil, dan tampil di preview maka akan lansung disimpan ke folder yang di sudah diset sebelumnya
+                    mPhotoFile = mCompressor.compressToFile(mPhotoFile);
+                    Glide.with(MainActivity.this).load(mPhotoFile).into(imageView);
+                    Toast.makeText(this, "Image Path : "+mPhotoFile.toString(), Toast.LENGTH_SHORT).show();
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
         }
