@@ -141,11 +141,11 @@ public class MainActivity extends AppCompatActivity {
     ...
 
     //1
-    static final int REQUEST_GALLERY_PHOTO = 3;
-    File mPhotoFile;
-    FileCompressor mCompressor;
-    Button btnCamera;
-    ImageView imageView;
+    private static final int REQUEST_GALLERY_PHOTO = 3;
+    private static File mPhotoFile;
+    private FileCompressor mCompressor;
+    private Button btnCamera;
+    private ImageView imageView;
 
     private void onSuccessCheckPermitions() {
         //2
@@ -181,8 +181,8 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             if (requestCode == REQUEST_GALLERY_PHOTO) {
-                Uri selectedImage = data.getData();
                 try {
+                    Uri selectedImage = data.getData();
                     mPhotoFile = mCompressor.compressToFile(selectedImage);
                     Glide.with(MainActivity.this).load(mPhotoFile).into(imageView);
                 } catch (IOException e) {
