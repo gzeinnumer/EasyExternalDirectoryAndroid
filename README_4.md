@@ -48,6 +48,7 @@ public class MyApp extends Application {
 }
 ```
 Add `MyApp` to manifest `android:name=".MyApp"`.
+Manifest. add permission ke file manifest. I recommend to add `requestLegacyExternalStorage=true` if you using Android 10.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest >
@@ -57,6 +58,7 @@ Add `MyApp` to manifest `android:name=".MyApp"`.
 
     <application
         android:name=".MyApp"
+        android:requestLegacyExternalStorage="true"
         ...>
 
         ...
