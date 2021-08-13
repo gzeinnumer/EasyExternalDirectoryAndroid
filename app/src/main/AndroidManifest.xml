@@ -19,6 +19,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:configChanges="orientation"
         android:theme="@style/Theme.EasyExternalDirectoryAndroid">
         <activity android:name=".activities.InternetActivity" />
         <activity android:name=".activities.GaleryActivity" />
