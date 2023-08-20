@@ -3,7 +3,7 @@
 </h1>
 
 <div align="center">
-    <a><img src="https://img.shields.io/badge/Version-2.2.0-brightgreen.svg?style=flat"></a>
+    <a><img src="https://img.shields.io/badge/Version-2.2.1-brightgreen.svg?style=flat"></a>
     <a><img src="https://img.shields.io/badge/ID-gzeinnumer-blue.svg?style=flat"></a>
     <a><img src="https://img.shields.io/badge/Java-Suport-green?logo=java&style=flat"></a>
     <a><img src="https://img.shields.io/badge/Kotlin-Suport-green?logo=kotlin&style=flat"></a>
@@ -37,6 +37,16 @@ allprojects {
 dependencies {
   ...
   implementation 'com.github.gzeinnumer:EasyExternalDirectoryAndroid:version'
+
+  // reactive
+  implementation "io.reactivex.rxjava2:rxjava:2.1.9"
+  implementation "io.reactivex.rxjava2:rxandroid:2.0.1"
+  implementation('com.github.bumptech.glide:glide:4.7.1@aar') {
+    transitive = true
+  }
+  implementation 'com.karumi:dexter:4.2.0'
+  implementation 'com.squareup.picasso:picasso:2.71828'
+  implementation "rebus:permission-utils:2.0.7"
 }
 ```
 
@@ -126,6 +136,8 @@ This library need Permission you can use this step [**MultiPermission**](https:/
   - Message Error CallBack
 - **2.2.0**
   - Free Space Storage Checker
+- **2.2.1**
+  - Bug Fixed
 
 ---
 # Contribution
