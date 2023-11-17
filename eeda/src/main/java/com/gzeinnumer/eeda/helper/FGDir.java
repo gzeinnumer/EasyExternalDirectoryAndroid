@@ -5,15 +5,18 @@ import android.os.StatFs;
 import android.util.Log;
 
 import java.io.File;
+import java.util.Objects;
 
 public class FGDir {
 
     public static final String TAG = "FGDir";
 
-    public final static String getStorageCard = Environment.getExternalStorageDirectory().toString();
+//    public final static String getStorageCard = Environment.getExternalStorageDirectory().toString();
+    public static String getStorageCard = "";
     public static String appFolder = "";
 
     private static MessageCallBack mCallBack;
+
 
     public static void logSystemFunctionGlobal(String tag, String function, String msg, boolean display) {
         Log.d("MyLibDirectory_Debug", function + "_" + msg);
@@ -26,6 +29,10 @@ public class FGDir {
 
     public static void myLogD(String tag, String msg) {
         Log.d(tag, msg);
+    }
+
+    public static void setGetStorageCard(String getStorageCard) {
+        FGDir.getStorageCard = getStorageCard;
     }
 
     public static void initExternalDirectoryName(String appFolder) {
@@ -62,6 +69,9 @@ public class FGDir {
         }
         File folder;
 
+        if(Objects.equals(getStorageCard, "")){
+            getStorageCard = Environment.getExternalStorageDirectory().toString();
+        }
         // create appFolder
         folder = new File(getStorageCard + appFolder);
         if (!folder.exists()) {
